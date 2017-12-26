@@ -1,0 +1,25 @@
+﻿<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+		<DirectoryRef Id="TARGETDIR">
+			<Directory Id="ProgramFilesFolder" Name="PFiles">
+				<Directory Id="InstallFolder" Name="Motorola W375 Manager">
+					<Component Id="Application" Guid="093C4338-64A1-4D83-B51E-C9DE16D48D26" DiskId="1" KeyPath="no">
+						<File Source="..\MotorolaManager\bin\MotorolaManager.exe" Name="MotorolaManager.exe" Id="bin.MotorolaManager.exe" Vital="yes" />
+						<File Id="LicenseFile" Name="license.rtf" Source="license.rtf" Vital="no" />
+						<File Source="..\MotorolaManager\bin\MotorolaManager.MotorolaIO.dll" Name="MotorolaManager.MotorolaIO.dll" Id="bin.MotorolaManager.MotorolaIO.dll" Vital="yes" />
+						<File Source="..\MotorolaManager\bin\License.txt" Name="License.txt" Id="bin.License.txt" Vital="yes" />
+						<File Source="..\MotorolaManager\bin\MotorolaManager.Common.dll" Name="MotorolaManager.Common.dll" Id="bin.MotorolaManager.Common.dll" Vital="yes" />
+						<File Source="..\MotorolaManager\bin\MotorolaManager.Converter.dll" Name="MotorolaManager.Converter.dll" Id="bin.MotorolaManager.Converter.dll" Vital="yes" />
+						<Shortcut Directory="ProgramGroup" Id="AppShortcut" Name="Motorola W375 Manager" Advertise="yes" WorkingDirectory="INSTALLDIR" Icon="W375Mgr.ico">
+							<Icon Id="W375Mgr.ico" SourceFile="..\MotorolaManager\bin\MotorolaManager.exe" />
+						</Shortcut>
+						<RemoveFolder Id="ProgramGroup" Directory="ProgramGroup" On="uninstall" />
+					</Component>
+				</Directory>
+			</Directory>
+			<Directory Id="ProgramMenuFolder" Name="PMenu">
+				<Directory Id="ProgramGroup" Name="Motorola W375 Manager" />
+			</Directory>
+		</DirectoryRef>
+	</Fragment>
+</Wix>
